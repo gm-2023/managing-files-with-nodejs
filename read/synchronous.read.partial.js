@@ -2,6 +2,7 @@ const fs = require('fs');
 
 const fd = fs.openSync('./data/app.log');
 
+module.exports.read = () => {
 //methodically chunk through
 let count = 0;
 
@@ -12,4 +13,4 @@ do{
 
     console.log(buffer.toString());
 }while (count > 0);
-
+}

@@ -1,6 +1,7 @@
-const {convertCsv} = require('./csv.parse');
+const {convertCsv} = require('../csv.parse');
 const {readFile} = require('fs');
 
+module.exports.read = () => {
 readFile("./data/pulitzer-circulation-data.csv", "utf8", (err,data) => {
     // if you do not specify an encoding when reading a file, the system defaults to a buffer of individual bytes which does not have a split function
     // always remember to specify coding
@@ -14,3 +15,4 @@ readFile("./data/pulitzer-circulation-data.csv", "utf8", (err,data) => {
 
     console.table(vals);
 });
+}

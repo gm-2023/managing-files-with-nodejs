@@ -1,5 +1,6 @@
-const {convertCsv} = require('./csv.parse');
+const {convertCsv} = require('../csv.parse');
 const {readFileSync} = require('fs');
+module.exports.read = () => {
 try{
     const data = readFileSync("./data/pulitzer-circulation-data.cs", "utf8");
 
@@ -7,5 +8,5 @@ try{
 } catch (err) {
     console.log(`Error with file: ${err}`);
 }
-
+}
 

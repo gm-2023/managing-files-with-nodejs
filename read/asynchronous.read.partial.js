@@ -1,9 +1,10 @@
-const {convertCsv} = require('./csv.parse');
+const {convertCsv} = require('../csv.parse');
 const {open, read} = require('fs');
 // const {promisify} = require('util');
 
 // const readFile = promisify(fs.readFile);
 
+module.exports.read = () => {
 open("./data/pulitzer-circulation-data.csv", (err, fd) => {
     // fd referes to a fild descriptor
     const buffer = Buffer.alloc(200);
@@ -11,3 +12,4 @@ open("./data/pulitzer-circulation-data.csv", (err, fd) => {
         console.table(convertCsv(buff.toString()));
     })
 });
+}
